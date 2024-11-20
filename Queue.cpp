@@ -3,13 +3,18 @@
 
 void initQueue(Queue* q, unsigned int size)
 {
+	int i = 0;
 	q->_elements = new int[size];
 	q->_maxSize = size;
+	for (i = 0; i < size; i++)
+	{
+		q->_elements[i] = NULL;
+	}
 }
 
 void cleanQueue(Queue* q)
 {
-	free(q->_elements);
+	delete[] q->_elements;
 	q->_elements = NULL;
 	q->_maxSize = 0;
 }
@@ -63,8 +68,8 @@ bool isFull(Queue* s)
 	{
 		if (s->_elements[i] == NULL)
 		{
-			return true;
+			return false;
 		}
 	}
-	return false;
+	return true;
 }

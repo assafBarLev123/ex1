@@ -7,8 +7,6 @@ typedef struct Queue
 {
 	int* _elements;
 	int _maxSize;
-	int count;
-	
 } Queue;
 
 void initQueue(Queue* q, unsigned int size);
